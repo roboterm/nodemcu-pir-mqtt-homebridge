@@ -12,3 +12,43 @@ HC-SR501 settings:
 - max sensitivity 
 
 I used the homebridge plugin https://github.com/heisice/homebridge-mqtt-motionsensor
+
+Sample config.json:  
+"accessories": [
+  {
+    "accessory": "mqtt-motionsensor",
+	  "name": "Living Room",
+	  "url": "mqtt://localhost",
+	  "topic": "home/livingroom/motionsensor",
+	  "username": "username",
+	  "password": "password"
+  }
+],
+
+Explanation:  
+- choose the same topic you already used in the Arduino sketch  
+- choose the same name you already used in the Arduino sketch  
+- username and password are the ones to the MQTT broker and depends on your MQTT broker settings  
+- the url does work since the MQTT broker runs on the same RPI3 than the Homebridge instance
+
+If you want to use several motion sensors, just add another accessory to the config.json.  
+Keep in mind to use another topic:  
+
+"accessories": [
+  {
+    "accessory": "mqtt-motionsensor",
+	  "name": "Living Room",
+	  "url": "mqtt://localhost",
+	  "topic": "home/livingroom/motionsensor",
+	  "username": "username",
+	  "password": "password"
+  },
+  {
+    "accessory": "mqtt-motionsensor",
+	  "name": "Hall",
+	  "url": "mqtt://localhost",
+	  "topic": "home/hall/motionsensor",
+	  "username": "username",
+	  "password": "password"
+  }
+],
