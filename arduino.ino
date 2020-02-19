@@ -1,7 +1,7 @@
 char* ssid = "Auenland"; //Wi-Fi AP Name
 char* password = "xxxxxxxx"; //Wi-Fi Password
 char* mqtt_server = "192.168.2.102"; //MQTT Server IP
-char* mqtt_name = "Wohnzimmer Bewegungssensor"; //MQTT device name
+char* mqtt_name = "Livingroom Motion Sensor"; //MQTT device name
 char* mqtt_topic = "home/livingroom/sensors/motion"; //MQTT topic for communication
 int pirPin = 13; //set the GPIO which you will connect the PIR sensor
 bool lowPower = false; //set to true if you want low power use
